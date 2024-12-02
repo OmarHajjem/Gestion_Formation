@@ -1,0 +1,39 @@
+<form
+class="note-form"
+autocomplete="off"
+[formGroup]="noteForm"
+(submit)="submitForm()"
+>
+
+<mat-form-field>
+  <mat-label>Id Etudiants</mat-label>
+  <input matInput placeholder="Id Etudiants" formControlName="idetudiant" required />
+   
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Id Cours</mat-label>
+  <input matInput placeholder="Id Cours" formControlName="idcours" required />
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Valeur</mat-label>
+  <input
+    matInput
+    placeholder="Valeur"
+    formControlName="valeur"
+    required
+  />
+</mat-form-field>
+
+<br />
+<button
+  mat-raised-button
+  color="primary"
+  type="submit"
+  [disabled]="noteForm.invalid"
+>
+  Valider
+</button>
+</form>
+

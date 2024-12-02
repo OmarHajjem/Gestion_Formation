@@ -1,0 +1,53 @@
+<form
+class="etudiant-form"
+autocomplete="off"
+[formGroup]="etudiantForm"
+(submit)="submitForm()"
+>
+
+<mat-form-field>
+  <mat-label>Id Etudiant</mat-label>
+  <input matInput placeholder="Id Etudiant" formControlName="idetd" required />
+   
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Nom</mat-label>
+  <input matInput placeholder="Nom" formControlName="nom" required />
+  @if (nom.invalid) {
+  <mat-error>La longueur du nom doit etre sup à 3.</mat-error>
+  }
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Adresse</mat-label>
+    <input matInput placeholder="Adresse" formControlName="adresse" required />
+    @if (adresse.invalid) {
+    <mat-error>La longueur d'adresse doit etre sup à 3.</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Section</mat-label>
+    <input matInput placeholder="Section" formControlName="section" required />
+    @if (section.invalid) {
+    <mat-error>La longueur du section doit etre sup à 3.</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>CIN</mat-label>
+    <input matInput placeholder="CIN" formControlName="cin" required />
+    @if (cin.invalid) {
+    <mat-error>La longueur du CIN doit etre égale à 8  .</mat-error>
+    }
+  </mat-form-field>
+
+<br />
+<button
+  mat-raised-button
+  color="primary"
+  type="submit"
+  [disabled]="etudiantForm.invalid"
+>
+  Valider
+</button>
+</form>
+

@@ -1,0 +1,43 @@
+<form
+class="cours-form"
+autocomplete="off"
+[formGroup]="coursForm"
+(submit)="submitForm()"
+>
+
+<mat-form-field>
+  <mat-label>Id Cours</mat-label>
+  <input matInput placeholder="Id Cours" formControlName="idcours" required />
+   
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Nom</mat-label>
+  <input matInput placeholder="Nom" formControlName="nom" required />
+  @if (nom.invalid) {
+  <mat-error>La longueur du nom doit etre sup à 3.</mat-error>
+  }
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Nombre Heure</mat-label>
+  <input
+    matInput
+    placeholder="Nb Heure"
+    formControlName="nbheure"
+    required
+  />
+   
+</mat-form-field>
+
+<br />
+<button
+  mat-raised-button
+  color="primary"
+  type="submit"
+  [disabled]="coursForm.invalid"
+>
+  Valider
+</button>
+</form>
+

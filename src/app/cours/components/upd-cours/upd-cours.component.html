@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Modification Cours </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-frm-cours
+        [initialState]="cours()"
+        (formSubmitted)="editCours($event)"
+      ></app-frm-cours>
+    </mat-card-content>
+  </mat-card>
